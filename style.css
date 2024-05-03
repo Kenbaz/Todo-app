@@ -1,0 +1,475 @@
+:root {
+  font-family: EB Garamond, serif;
+  line-height: 1.5;
+  font-weight: 400;
+
+  color-scheme: light dark;
+  color: rgba(255, 255, 255, 0.87);
+  background-color: #242424;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+};
+
+body {
+  margin: 0;
+  display: block;
+  place-items: center;
+  background: rgba(48, 64, 64, 1.0);
+  background: -webkit-radial-gradient(center, rgba(48, 64, 64, 1.0) 0%, rgba(0, 0, 0, 1.0) 100%);
+  background: -moz-radial-gradient(center, rgba(48, 64, 64, 1.0) 0%, rgba(0, 0, 0, 1.0) 100%);
+  background: radial-gradient(ellipse at center, rgba(48, 64, 64, 1.0) 0%, rgba(0, 0, 0, 1.0) 100%);
+  min-height: 100vh;
+};
+
+@media (prefers-color-scheme: light) {
+  :root {
+    color: #213547;
+    background-color: #ffffff;
+  }
+
+  a:hover {
+    color: #747bff;
+  }
+
+  button {
+    background-color: #f9f9f9;
+  }
+}
+
+/*Todo CSS*/
+.app {
+  background: rgba(48, 64, 64, 1.0);
+  background: -webkit-radial-gradient(center, rgba(48, 64, 64, 1.0) 0%, rgba(0, 0, 0, 1.0) 100%);
+  background: -moz-radial-gradient(center, rgba(48, 64, 64, 1.0) 0%, rgba(0, 0, 0, 1.0) 100%);
+  background: radial-gradient(ellipse at center, rgba(48, 64, 64, 1.0) 0%, rgba(0, 0, 0, 1.0) 100%);
+  min-height: 100vh;
+  box-shadow:
+    0 2px 4px 0 rgb(0 0 0 / 20%),
+    0 2.5rem 5rem 0 rgb(0 0 0 / 10%);
+  padding: 1rem;
+  margin: 0 auto;
+  position: relative;
+
+  >.decorator {
+    background: rgba(48, 64, 64, 1.0);
+    background: -webkit-radial-gradient(center, rgba(48, 64, 64, 1.0) 0%, rgba(0, 0, 0, 1.0) 100%);
+    background: -moz-radial-gradient(center, rgba(48, 64, 64, 1.0) 0%, rgba(0, 0, 0, 1.0) 100%);
+    background: radial-gradient(ellipse at center, rgba(48, 64, 64, 1.0) 0%, rgba(0, 0, 0, 1.0) 100%);
+    width: 100%;
+    /* border-radius: 10px; */
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    margin-block-start: 50px;
+    margin-block-end: 50px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    margin: 0 auto;
+    border: 1px solid #213547;
+    height: 270px;
+
+
+    >h1 {
+      font-size: 2em;
+      text-align: center;
+      line-height: 1.1;
+    }
+
+    >.input-header {
+
+      h2 {
+        margin-inline-start: 7px;
+      }
+
+      >#form {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+
+        .todo {
+          margin-inline-end: 10px;
+          margin-inline-start: 7px;
+          width: 35em;
+          height: 32px;
+          border: 1px solid #213547;
+          border-radius: 4px;
+
+        }
+
+        .todo::placeholder {
+          font-size: 14px;
+          padding: 10px;
+          font-weight: 570
+        }
+
+        ;
+
+        .todo:hover {
+          border: 1px solid #747bff;
+        }
+
+        button {
+          border-radius: 8px;
+          border: 1px solid transparent;
+          margin-inline-end: 7px;
+          padding: 2px;
+          height: 37px;
+          width: 47%;
+          font-size: 1em;
+          font-weight: 600;
+          font-family: inherit;
+          color: #ccc;
+          cursor: pointer;
+          transition: border-color 0.25s;
+          background-color: #222222;
+          border: 1px solid #213547
+        };
+
+        button:hover {
+          border-color: #fff;
+        };
+
+        button:focus,
+        button:focus-visible {
+          outline: 4px auto -webkit-focus-ring-color;
+        };
+      };
+    };
+
+    >.filter-btn-container {
+      padding: 10px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-block-start: 20px;
+
+      >.filter-btns-wrap {
+        display: flex;
+        gap: 7px;
+        width: 100%;
+
+        >.btn-toggle {
+          width: 37%;
+          height: 39px;
+          border-radius: 8px;
+          border: 1px solid transparent;
+          padding: 0.6em 1.2em;
+          font-size: 1em;
+          font-weight: 700;
+          font-family: inherit;
+          color: #ccc;
+          border: 1px solid #213547;
+          cursor: pointer;
+          transition: border-color 0.25s;
+          background-color: #222222;
+
+          >.visually-hidden {
+            clip: rect(1px 1px 1px 1px);
+            clip: rect(1px, 1px, 1px, 1px);
+            height: 1px;
+            overflow: hidden;
+            position: absolute !important;
+            white-space: nowrap;
+            width: 1px;
+          }
+        }
+
+        button:hover {
+          border-color: #fff;
+        };
+
+        button:focus,
+        button:focus-visible {
+          outline: 4px auto -webkit-focus-ring-color;
+        };
+      }
+    };
+  };
+
+  >#todos {
+    height: 60vh;
+    width: 100%;
+    border: 2px solid rgba(0, 0, 0, 0.1);
+    /* border-radius: 10px; */
+    background: rgba(48, 64, 64, 1.0);
+    background: -webkit-radial-gradient(center, rgba(48, 64, 64, 1.0) 0%, rgba(0, 0, 0, 1.0) 100%);
+    background: -moz-radial-gradient(center, rgba(48, 64, 64, 1.0) 0%, rgba(0, 0, 0, 1.0) 100%);
+    background: radial-gradient(ellipse at center, rgba(48, 64, 64, 1.0) 0%, rgba(0, 0, 0, 1.0) 100%);
+    list-style: none;
+    padding: 0;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    overflow-y: auto;
+    border: 1px solid #213547;
+
+    >.todo_items {
+      width: 100%;
+      outline: none;
+      border: none;
+      resize: none;
+      line-height: 1.4;
+      color: white;
+      border-radius: 10px;
+      background-color: transparent;
+      font-size: 1.2rem;
+      font-family: inherit;
+      transition: all 0.30s ease-in-out;
+
+      >.todo-item {
+        display: flex;
+        flex-direction: column;
+        font-size: inherit;
+        gap: 10px;
+        background-color: rgba(0, 0, 0, 0.3);
+        /* border-radius: 10px; */
+        padding: 8px;
+        list-style: none;
+        height: auto;
+
+        .list-item {
+          color: #f9f9f9;
+          font-size: inherit;
+        }
+
+        .todo-btns {
+          .deleteBtn {
+            color: #213547;
+            width: 35px;
+            position: relative;
+            bottom: 8px;
+            cursor: pointer;
+          }
+
+          .deleteBtn:hover {
+            transform: scale(1.1);
+            color: #CF1124;
+          }
+
+          .markCompleteBtn {
+            color: #213547;
+            width: 30px;
+            position: relative;
+            bottom: 8px;
+            cursor: pointer;
+          }
+
+          .markCompleteBtn:hover {
+            transform: scale(1.1);
+            color: green
+          }
+        }
+      };
+    }
+  }
+
+  @media (min-width: 42em) {
+    #app {
+        font-size: 20px;
+
+        .decorator {
+            width: 94%;
+            height: 330px;
+            margin-block-start: 17px;
+            margin-block-end: 30px;
+
+            .input-header {
+                h2 {
+                    margin-inline-start: 30px;
+                }
+
+                #form {
+                    .todo {
+                        font-size: 19px;
+                        width: 800px;
+                        max-width: 100%;
+                        height: 49px;
+                        margin-inline-start: 30px;
+                    };
+
+                    .todo::placeholder {
+                        font-size: 19px;
+                    };
+
+                    button {
+                        height: 54px;
+                        font-size: 19px;
+                        margin-inline-end: 20px;
+                    }
+                }
+            };
+
+            .filter-btn-container {
+                .filter-btns-wrap {
+                    .btn-toggle {
+                        font-size: 19px;
+                        height: 55px;
+                        width: 200px;
+                        margin-inline-start: 20px;
+                    }
+                }
+            }
+        };
+
+        #todos {
+            height: 750px;
+
+            .todo_items {
+                .todo-item {
+                    .list-item {
+                        margin-inline-start: 20px;
+                        font-size: 24px;
+                    };
+
+                    .todo-btns {
+                        .deleteBtn {
+                            margin-inline-start: 20px;
+                            font-size: 24px;
+                            margin-inline-end: 20px;
+                        };
+
+                        .markCompleteBtn {
+                            font-size: 24px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+};
+}
+
+@media (min-width: 42em) {
+  .app {
+    font-size: 20px;
+
+    .decorator {
+      width: 94%;
+      height: 330px;
+      margin-block-start: 17px;
+      margin-block-end: 30px;
+
+      .input-header {
+        h2 {
+          margin-inline-start: 30px;
+        }
+
+        #form {
+          .todo {
+            font-size: 19px;
+            width: 800px;
+            max-width: 100%;
+            height: 49px;
+            margin-inline-start: 30px;
+          }
+
+          .todo::placeholder {
+            font-size: 19px;
+          }
+
+          button {
+            height: 54px;
+            font-size: 19px;
+            margin-inline-end: 20px;
+          }
+        }
+      }
+
+      .filter-btn-container {
+        .filter-btns-wrap {
+          .btn-toggle {
+            font-size: 19px;
+            height: 55px;
+            width: 200px;
+            margin-inline-start: 20px;
+          }
+        }
+      }
+    }
+
+    #todos {
+      height: 750px;
+      width: 94%;
+      margin: 0 auto;
+
+      .todo_items {
+        .todo-item {
+          .list-item {
+            margin-inline-start: 20px;
+            font-size: 24px;
+          }
+
+          .todo-btns {
+            .deleteBtn {
+              margin-inline-start: 20px;
+              font-size: 24px;
+              margin-inline-end: 20px;
+            }
+
+            .markCompleteBtn {
+              font-size: 24px;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (min-width: 64em) {
+  .app {
+    width: 700px;
+    max-width: 100%;
+    border: 1px solid #213547;
+    margin: 0 auto;
+
+    .decorator {
+      .input-header {
+        font-size: 17px;
+
+        #form {
+          .todo {
+            font-size: 10px;
+            outline: none;
+          }
+
+          .todo::placeholder {
+            font-size: 15px;
+          }
+
+          button {
+            font-size: 19px;
+          }
+        }
+      }
+    }
+
+        #todos {
+          width: 94%;
+          margin: 0 auto;
+    
+          .todo_items {
+            .todo-item {
+              .list-item {
+                margin-inline-start: 20px;
+                font-size: 19px;
+              }
+    
+              .todo-btns {
+                .deleteBtn {
+                  margin-inline-start: 20px;
+                  font-size: 19px;
+                  margin-inline-end: 20px;
+                }
+    
+                .markCompleteBtn {
+                  font-size: 19px;
+                }
+              }
+            }
+          }
+        }
+  }
+}
