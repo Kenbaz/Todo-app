@@ -67,6 +67,7 @@ body {
     margin: 0 auto;
     border: 1px solid #213547;
     height: 270px;
+    border-radius: 10px;
 
 
     >h1 {
@@ -204,6 +205,7 @@ body {
     gap: 15px;
     overflow-y: auto;
     border: 1px solid #213547;
+    border-radius: 10px;
 
     >.todo_items {
       width: 100%;
